@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailTvShowActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/img_tv_show"
+            android:layout_width="170dp"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_value_release"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_title"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            style="@style/TextContent.Black"
+            android:id="@+id/tv_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintStart_toEndOf="@+id/img_tv_show"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/title" />
+
+        <TextView
+            style="@style/TextContentValue"
+            android:id="@+id/tv_value_title"
+            android:layout_marginTop="16dp"
+            android:text="@string/value_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <TextView
+            style="@style/TextContent.Black"
+            android:id="@+id/tv_popularity"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_value_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_value_title" />
+
+        <TextView
+            style="@style/TextContentValue"
+            android:id="@+id/tv_value_popularity"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_popularity"
+            app:layout_constraintTop_toBottomOf="@+id/tv_popularity" />
+
+        <TextView
+            style="@style/TextContent.Black"
+            android:id="@+id/tv_release"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_value_popularity"
+            app:layout_constraintTop_toBottomOf="@+id/tv_value_popularity" />
+
+        <TextView
+            style="@style/TextContentValue"
+            android:id="@+id/tv_value_release"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_release"
+            app:layout_constraintTop_toBottomOf="@+id/tv_release" />
+
+        <TextView
+            style="@style/TextContent.Black"
+            android:id="@+id/tv_overview"
+            android:layout_marginTop="16dp"
+            android:text="@string/overview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_value_vote_average"
+            app:layout_constraintTop_toBottomOf="@+id/tv_value_vote_average" />
+
+        <TextView
+            style="@style/TextContentValue"
+            android:id="@+id/tv_value_overview"
+            android:layout_marginTop="16dp"
+            android:text="@string/value_overview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_overview"
+            app:layout_constraintTop_toBottomOf="@+id/tv_overview" />
+
+        <TextView
+            style="@style/TextContent.Black"
+            android:id="@+id/tv_vote_average"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/img_tv_show"
+            app:layout_constraintTop_toBottomOf="@+id/img_tv_show" />
+
+        <TextView
+            style="@style/TextContentValue"
+            android:id="@+id/tv_value_vote_average"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_vote_average"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vote_average" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+</ScrollView>

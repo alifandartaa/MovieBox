@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailMovieActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/img_movie"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/img_movie"
+            android:layout_width="170dp"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_value_release"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_title"
+            tools:ignore="MissingConstraints"
+            android:contentDescription="@string/image_movie" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TextContent.Black"
+            android:text="@string/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintStart_toEndOf="@+id/img_movie"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_value_title"
+            style="@style/TextContentValue"
+            android:layout_marginTop="16dp"
+            android:text="@string/value_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_popularity"
+            style="@style/TextContent.Black"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_value_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_value_title" />
+
+        <TextView
+            android:id="@+id/tv_value_popularity"
+            style="@style/TextContentValue"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_popularity"
+            app:layout_constraintTop_toBottomOf="@+id/tv_popularity" />
+
+        <TextView
+            android:id="@+id/tv_release_date"
+            style="@style/TextContent.Black"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_value_popularity"
+            app:layout_constraintTop_toBottomOf="@+id/tv_value_popularity" />
+
+        <TextView
+            android:id="@+id/tv_value_release"
+            style="@style/TextContentValue"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_release_date"
+            app:layout_constraintTop_toBottomOf="@+id/tv_release_date" />
+
+        <TextView
+            android:id="@+id/tv_overview"
+            style="@style/TextContent.Black"
+            android:layout_marginTop="16dp"
+            android:text="@string/overview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_value_vote"
+            app:layout_constraintTop_toBottomOf="@+id/tv_value_vote" />
+
+        <TextView
+            android:id="@+id/tv_value_overview"
+            style="@style/TextContentValue"
+            android:layout_marginTop="16dp"
+            android:text="@string/value_overview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_overview"
+            app:layout_constraintTop_toBottomOf="@+id/tv_overview" />
+
+        <TextView
+            android:id="@+id/tv_vote_average"
+            style="@style/TextContent.Black"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/img_movie"
+            app:layout_constraintTop_toBottomOf="@+id/img_movie" />
+
+        <TextView
+            android:id="@+id/tv_value_vote"
+            style="@style/TextContentValue"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_vote_average"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vote_average" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
