@@ -4,102 +4,16 @@
     <string name="movie_name" />
     <string name="overview">Sinopsis</string>
 
-    <string-array name="movie_runtime">
-        <item>1 jam 59 menit</item>
-        <item>2 jam 10 menit</item>
-        <item>2 jam 14 menit</item>
-        <item>2 jam 9 menit</item>
-        <item>1 jam 40 menit</item>
-        <item>2 jam 29 menit</item>
-        <item>1 jam 47 menit</item>
-        <item>2 jam 9 menit</item>
-        <item>1 jam 50 menit</item>
-        <item>1 jam 56 menit</item>
-    </string-array>
-
-    <string-array name="movie_release">
-        <item>30 April 2019</item>
-        <item>17 May 2019</item>
-        <item>12 March 2019</item>
-        <item>16 February 2018</item>
-        <item>14 December 2018</item>
-        <item>5 October 2018</item>
-        <item>2 November 2018</item>
-        <item>12 April 2019</item>
-        <item>16 November 2018</item>
-        <item>14 December 2018</item>
-    </string-array>
-
-    <string-array name="movie_overview">
-        <item>Kehidupan keluarga yang tenang di Nels Coxman, seorang sopir bajak salju, menjadi kacau setelah pembunuhan putranya. Nels memulai perburuan dendam untuk Viking, raja obat bius yang dimilikinya yang bertanggung jawab atas pembunuhan itu, menghilangkan rekan Viking satu per satu. Ketika Nels semakin dekat dengan Viking, tindakannya membawa konsekuensi yang lebih tak terduga dan keras, karena ia membuktikan bahwa balas dendam adalah semua dalam eksekusi.</item>
-        <item>Antara kewajiban pribadi dan pelatihan untuk pertarungan besar berikutnya melawan lawan yang memiliki ikatan dengan masa lalu keluarganya, Adonis Creed menghadapi tantangan hidupnya.</item>
-        <item>Gellert Grindelwald telah lolos dari hukuman penjara dan mulai mengumpulkan pengikut untuk penyihir-penyihir penyebab utamanya di atas semua makhluk non-magis. Satu-satunya yang mampu menghentikannya adalah penyihir yang pernah ia sebut teman terdekatnya, Albus Dumbledore. Namun, Dumbledore perlu mencari bantuan dari penyihir yang pernah menggagalkan Grindelwald sebelumnya, mantan muridnya Newt Scamander, yang setuju untuk membantu, tidak menyadari bahaya yang ada di depan. Garis ditarik ketika cinta dan kesetiaan diuji, bahkan di antara teman dan keluarga yang paling sejati, dalam dunia sihir yang semakin terpecah.</item>
-        <item>Dalam serangkaian pertemuan yang meningkat, mantan penjaga keamanan David Dunn menggunakan kemampuan supernaturalnya untuk melacak Kevin Wendell Crumb, seorang lelaki terganggu yang memiliki dua puluh empat kepribadian. Sementara itu, kehadiran bayangan Elia Price muncul sebagai seorang orkestra yang menyimpan rahasia penting bagi keduanya.</item>
-        <item>Sebagai putra seorang pemimpin Viking pada puncak kedewasaan, pemalu Hiccup Horrendous Haddock 3 menghadapi ritual peralihan: ia harus membunuh naga untuk membuktikan keberanian prajuritnya. Tetapi setelah menebas naga yang ditakuti, dia menyadari bahwa dia tidak lagi ingin menghancurkannya, dan sebaliknya berteman dengan binatang buas yang dia beri nama ompong banyak ke kesedihan ayah kesatria</item>
-        <item>Ketika Avengers dan sekutu mereka terus melindungi dunia dari ancaman yang terlalu besar untuk ditangani oleh satu pahlawan, bahaya baru telah muncul dari bayang-bayang kosmik: Thanos. Seorang lalim penghinaan intergalaksi, tujuannya adalah untuk mengumpulkan semua enam Batu Infinity, artefak kekuatan yang tak terbayangkan, dan menggunakannya untuk menimbulkan keinginannya yang terpelintir pada semua kenyataan. Segala yang Avengers telah perjuangkan telah menyebabkan hingga saat ini nasib Bumi dan keberadaannya tidak pernah lebih pasti.</item>
-        <item>Menyusul kekalahannya oleh Master Ip, Cheung Tin Chi (Zhang) mencoba untuk membuat hidup dengan putranya yang masih muda di Hong Kong, menunggu meja di sebuah bar yang melayani ekspatriat. Tapi itu tidak lama sebelum campuran orang asing, uang, dan pemimpin triad menariknya sekali lagi ke pertarungan.</item>
-        <item>Beribu-ribu tahun di masa depan, kota-kota di bumi menjelajah dunia dengan roda besar, saling melahap dalam perjuangan untuk sumber daya yang semakin berkurang. Di salah satu kota traksi besar ini, London tua, Tom Natsworthy mengalami pertemuan tak terduga dengan seorang wanita muda misterius dari daerah terlantar yang akan mengubah jalan hidupnya selamanya.</item>
-        <item>Prancis, Juni 1944. Pada malam D Day, beberapa pasukan terjun payung Amerika jatuh di belakang garis musuh setelah pesawat mereka jatuh ketika dalam misi untuk menghancurkan menara radio di sebuah desa kecil di dekat pantai Normandia. Setelah mencapai target mereka, pasukan terjun payung yang masih hidup menyadari bahwa, selain melawan pasukan Nazi yang berpatroli di desa, mereka juga harus bertarung melawan sesuatu yang lain.</item>
-        <item>Sebuah perang yang mengeraskan Tentara Salib dan komandannya di Moor melancarkan pemberontakan yang berani melawan mahkota Inggris yang korup.</item>
-    </string-array>
-
-    <string-array name="tvshow_runtime">
-        <item>42 menit</item>
-        <item>60 menit</item>
-        <item>25 menit</item>
-        <item>25 menit</item>
-        <item>44 menit</item>
-        <item>42 menit</item>
-        <item>43 sd 60 menit</item>
-        <item>43 menit</item>
-        <item>50 menit</item>
-        <item>45 menit</item>
-    </string-array>
-
-    <string-array name="tvshow_overview">
-        <item>Anggota Patroli Spo Doom masing-masing mengalami kecelakaan mengerikan yang memberi mereka kemampuan manusia super tetapi juga membuat mereka terluka dan cacat. Trauma dan tertindas, tim menemukan tujuan melalui Ketua, yang menyatukan mereka untuk menyelidiki fenomena paling aneh yang ada dan untuk melindungi Bumi dari apa yang mereka temukan.</item>
-        <item>Playboy miliarder kesepian, Oliver Queen, hilang dan diduga tewas ketika kapal pesiarnya hilang di laut. Dia kembali lima tahun kemudian seorang pria yang berubah, bertekad untuk membersihkan kota sebagai main hakim sendiri bersenjatakan busur.</item>
-        <item>Saat lalu di pegunungan, seorang master pertempuran yang dikenal sebagai Gohan menemukan seorang bocah aneh yang ia beri nama Goku. Gohan membesarkannya dan melatih Goku dalam seni bela diri sampai dia mati. Bocah muda dan sangat kuat itu sendirian, tetapi mudah dikelola. Kemudian suatu hari, Goku bertemu dengan seorang gadis remaja bernama Bulma, yang pencariannya untuk Bola Naga mistis membawanya ke rumah Gokus. Bersama-sama, mereka berangkat untuk menemukan ketujuh dan mengabulkan keinginannya.</item>
-        <item>Lucy adalah seorang gadis berusia 17 tahun, yang ingin menjadi penyihir penuh. Suatu hari ketika mengunjungi Kota Harujion, dia bertemu Natsu, seorang pemuda yang mudah sakit karena segala jenis transportasi. Tapi Natsu bukan sembarang anak biasa, dia adalah anggota dari salah satu serikat penyihir paling terkenal di dunia: Fairy Tail.</item>
-        <item>Setelah akselerator partikel menyebabkan badai aneh, Penyelidik CSI Barry Allen disambar petir dan jatuh koma. Beberapa bulan kemudian dia terbangun dengan kekuatan kecepatan super, memberinya kemampuan untuk bergerak melalui Central City seperti malaikat penjaga yang tak terlihat.</item>
-        <item>Seorang ateis yang memproklamirkan dirinya sendiri didorong untuk membantu orang asing dengan seseorang yang mengaku sebagai Tuhan yang berteman dengannya di Facebook.</item>
-        <item>Semua orang tahu nama Komisaris Gordon. Dia adalah salah satu musuh terbesar dunia kejahatan, seorang pria yang reputasinya identik dengan hukum dan ketertiban. Tapi apa yang diketahui tentang kisah Gordon dan kebangkitannya dari detektif pemula menjadi Komisaris Polisi</item>
-        <item>Mengikuti kehidupan pribadi dan profesional sekelompok dokter di Rumah Sakit Gray Sloan Memorial Seattle.</item>
-        <item>Drama thriller dan kedatangan zaman ini mengikuti perjalanan seorang gadis muda yang luar biasa ketika ia menghindari pengejaran tanpa henti dari agen CIA yang tidak dikenal dan mencoba untuk menggali kebenaran di balik siapa dirinya. Berdasarkan film Joe Wright 2011.</item>
-        <item>Berada di masa sekarang, seri ini menawarkan pandangan yang berani dan subversif pada Archie, Betty, Veronica dan teman-teman mereka, menjelajahi kejernihan kehidupan kota kecil, kegelapan dan keanehan yang menggelegak di bawah fasad Riverdale yang sehat.</item>
-    </string-array>
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="content_tab_home">Change your home</string>
-    <string name="content_tab_profile">Change your profile</string>
-    <string name="tab_text_1">FILM</string>
-    <string name="tab_text_2">ACARA TV</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="movie">Film</string>
     <string name="tv_show">Acara TV</string>
     <string name="title">Judul</string>
     <string name="value_title">Value Title</string>
-    <string name="Director">Pembuat</string>
-    <string name="value_director">Value Director</string>
-    <string name="release">Keluaran</string>
-    <string name="value_release">Value Release</string>
     <string name="value_overview">Value Overview</string>
-    <string name="runtime">Durasi</string>
-    <string name="value_runtime">Value Runtime</string>
-    <string name="english">English</string>
-    <string name="indonesia">Indonesia</string>
     <string name="change_language_settings">Ubah bahasa</string>
-    <string name="popularity">Popularitas</string>
-    <string name="value_popularity">Value popularity</string>
-    <string name="vote_average">Rata rata pilih</string>
-    <string name="value_vote_average">Value Vote Average</string>
     <string name="image_movie">Image Movie</string>
 
     <string name="favorite">Favorite</string>
-    <string name="item_favorite">item_favorite</string>
     <string name="btn_favorite">favorite</string>
     <string name="movie_type">type</string>
     <string name="fav_added">Favorite telah ditambahkan</string>
@@ -108,23 +22,12 @@
     <string name="search_hint">input title movie or tvshow</string>
     <string name="daily_reminder">Daily Reminder</string>
     <string name="release_reminder">Release Reminder</string>
-    <string name="title_activity_settings">Settings</string>
 
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
 
     <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="reminder">Reminder</string>
     <string name="dailyreminder_on">Daily Reminder is On</string>
     <string name="content_text">Ayo buka aplikasi Movie Catalogue</string>
     <string name="dailyreminder_off">Daily Reminder is Off</string>

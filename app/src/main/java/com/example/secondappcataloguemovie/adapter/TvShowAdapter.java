@@ -11,9 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.secondappcataloguemovie.model.Movie;
-import com.example.secondappcataloguemovie.model.TvShow;
 import com.example.secondappcataloguemovie.R;
+import com.example.secondappcataloguemovie.model.TvShow;
 
 import java.util.ArrayList;
 
@@ -22,7 +21,6 @@ public class TvShowAdapter extends RecyclerView.Adapter<TvShowAdapter.CardViewVi
     private OnItemClickCallback onItemClickCallback;
 
     public TvShowAdapter(){
-
     }
 
     public void setOnItemClickCallback(TvShowAdapter.OnItemClickCallback onItemClickCallback) {

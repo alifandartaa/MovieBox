@@ -1,6 +1,5 @@
 package com.example.secondappcataloguemovie.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.secondappcataloguemovie.R;
 import com.example.secondappcataloguemovie.model.Favorite;
-import com.example.secondappcataloguemovie.model.Movie;
 
 import java.util.ArrayList;
 
@@ -73,7 +71,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
             tvType = itemView.findViewById(R.id.tv_fav_type);
         }
 
-        void bind(Favorite favorite){
+        void bind(Favorite favorite) {
             tvTitle.setText(favorite.getTitle());
             tvType.setText(favorite.getType());
             tvDescription.setText(favorite.getDesc());

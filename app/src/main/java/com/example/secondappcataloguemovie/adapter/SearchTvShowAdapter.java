@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class SearchTvShowAdapter extends RecyclerView.Adapter<SearchTvShowAdapter.CardViewViewHolder> {
     private ArrayList<TvShow> listTvShow = new ArrayList<>();
 
-    public SearchTvShowAdapter(){
+    public SearchTvShowAdapter() {
     }
 
     public void setData(ArrayList<TvShow> items) {

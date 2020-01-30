@@ -1,6 +1,5 @@
 package com.example.secondappcataloguemovie.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.secondappcataloguemovie.model.Movie;
 import com.example.secondappcataloguemovie.R;
+import com.example.secondappcataloguemovie.model.Movie;
 
 import java.util.ArrayList;
 
@@ -22,7 +21,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardViewView
     private OnItemClickCallback onItemClickCallback;
 
     public MovieAdapter() {
-
     }
 
     public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
@@ -82,7 +80,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardViewView
                     .load(movie.getPosterPath())
                     .apply(new RequestOptions().override(110, 130))
                     .into(imgPoster);
-            Log.d("cek", "tes123" + (movie.getPosterPath()));
         }
     }
 

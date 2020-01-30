@@ -1,4 +1,4 @@
-package com.example.secondappcataloguemovie.api;
+package com.example.secondappcataloguemovie.viewmodel;
 
 import android.annotation.SuppressLint;
 import android.util.Log;
@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.secondappcataloguemovie.BuildConfig;
 import com.example.secondappcataloguemovie.model.Movie;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -18,11 +19,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 import cz.msebera.android.httpclient.Header;
 
 public class MovieViewModel extends ViewModel {
-    private static final String API_KEY = "3148d91de7ab9fa0e608d7be83b7d967";
+    private static final String API_KEY = BuildConfig.API_KEY;
     private MutableLiveData<ArrayList<Movie>> listMovies = new MutableLiveData<>();
 
     public MovieViewModel() {
@@ -49,13 +51,13 @@ public class MovieViewModel extends ViewModel {
                     }
                     listMovies.postValue(listItems);
                 }catch (Exception e){
-                    Log.d("Exception", e.getMessage());
+                    Log.d("Exception", Objects.requireNonNull(e.getMessage()));
                 }
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Log.d("onFailure", error.getMessage());
+                Log.d("onFailure", Objects.requireNonNull(error.getMessage()));
             }
         });
     }
@@ -81,13 +83,13 @@ public class MovieViewModel extends ViewModel {
                     }
                     listMovies.postValue(listItems);
                 }catch (Exception e){
-                    Log.d("Exception", e.getMessage());
+                    Log.d("Exception", Objects.requireNonNull(e.getMessage()));
                 }
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Log.d("onFailure", error.getMessage());
+                Log.d("onFailure", Objects.requireNonNull(error.getMessage()));
             }
         });
     }
@@ -118,13 +120,13 @@ public class MovieViewModel extends ViewModel {
                     listener.onSuccess(listItems);
                     listener.onError(false);
                 }catch (Exception e){
-                    Log.d("Exception", e.getMessage());
+                    Log.d("Exception", Objects.requireNonNull(e.getMessage()));
                 }
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Log.d("onFailure", error.getMessage());
+                Log.d("onFailure", Objects.requireNonNull(error.getMessage()));
                 listener.onError(true);
                 listener.onSuccess(new ArrayList<Movie>());
             }

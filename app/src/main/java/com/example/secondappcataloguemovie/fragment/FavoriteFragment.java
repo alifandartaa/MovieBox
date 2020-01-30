@@ -20,9 +20,8 @@ import com.example.secondappcataloguemovie.R;
 import com.example.secondappcataloguemovie.activities.DetailMovieActivity;
 import com.example.secondappcataloguemovie.activities.DetailTvShowActivity;
 import com.example.secondappcataloguemovie.adapter.FavoriteAdapter;
-import com.example.secondappcataloguemovie.api.FavoriteViewModel;
+import com.example.secondappcataloguemovie.viewmodel.FavoriteViewModel;
 import com.example.secondappcataloguemovie.model.Favorite;
-import com.example.secondappcataloguemovie.model.Movie;
 
 import java.util.ArrayList;
 
@@ -33,25 +32,19 @@ import static com.example.secondappcataloguemovie.activities.DetailMovieActivity
  */
 public class FavoriteFragment extends Fragment {
 
-    private RecyclerView rvFavorite;
-    private ArrayList<Favorite> list = new ArrayList<>();
-
     public FavoriteFragment() {
-        // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_favorite, container, false);
     }
 
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        rvFavorite = view.findViewById(R.id.rv_favorite);
+        RecyclerView rvFavorite = view.findViewById(R.id.rv_favorite);
         rvFavorite.setHasFixedSize(true);
 
         rvFavorite.setLayoutManager(new LinearLayoutManager(getContext()));

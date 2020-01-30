@@ -38,10 +38,6 @@ public class Favorite implements Parcelable {
         return poster;
     }
 
-    public void setPoster(String poster) {
-        this.poster = poster;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -52,10 +48,6 @@ public class Favorite implements Parcelable {
 
     public String getDesc() {
         return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
     }
 
     protected Favorite(Parcel in) {

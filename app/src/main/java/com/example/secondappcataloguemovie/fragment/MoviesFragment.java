@@ -15,16 +15,17 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.secondappcataloguemovie.R;
 import com.example.secondappcataloguemovie.activities.DetailMovieActivity;
 import com.example.secondappcataloguemovie.adapter.MovieAdapter;
+import com.example.secondappcataloguemovie.viewmodel.MovieViewModel;
 import com.example.secondappcataloguemovie.model.Movie;
-import com.example.secondappcataloguemovie.api.MovieViewModel;
-import com.example.secondappcataloguemovie.R;
 
 import java.util.ArrayList;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
+import static com.example.secondappcataloguemovie.activities.DetailMovieActivity.EXTRA_MOVIE;
 
 
 /**
@@ -32,36 +33,27 @@ import static android.view.View.VISIBLE;
  */
 public class MoviesFragment extends Fragment {
 
-    private RecyclerView rvMovies;
     private MovieViewModel moviesViewModel;
-    private ArrayList<Movie> list = new ArrayList<>();
-    private  ProgressBar progressBar;
+    private ProgressBar progressBar;
     private final MovieAdapter listMovieAdapter = new MovieAdapter();
-    public static Bundle savedState;
 
     public MoviesFragment() {
-        // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_movies, container, false);
     }
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        savedState = savedInstanceState;
-
-        rvMovies = view.findViewById(R.id.rv_movies);
-        rvMovies.setHasFixedSize(true);
 
         progressBar = view.findViewById(R.id.progressBar);
+        RecyclerView rvMovies = view.findViewById(R.id.rv_movies);
 
+        rvMovies.setHasFixedSize(true);
         rvMovies.setLayoutManager(new LinearLayoutManager(getContext()));
-
         listMovieAdapter.notifyDataSetChanged();
         rvMovies.setAdapter(listMovieAdapter);
 
@@ -71,14 +63,13 @@ public class MoviesFragment extends Fragment {
         moviesViewModel.getMovies().observe(getViewLifecycleOwner(), new Observer<ArrayList<Movie>>() {
             @Override
             public void onChanged(ArrayList<Movie> movies) {
-                if(movies != null){
+                if (movies != null) {
                     listMovieAdapter.setData(movies);
                     moviesViewModel.clear();
                     showLoading(false);
                 }
             }
         });
-
         listMovieAdapter.setOnItemClickCallback(new MovieAdapter.OnItemClickCallback() {
             @Override
             public void onItemClicked(Movie data) {
@@ -95,7 +86,7 @@ public class MoviesFragment extends Fragment {
         dataMovie.setPosterPath(movie.getPosterPath());
 
         Intent intent = new Intent(getActivity(), DetailMovieActivity.class);
-        intent.putExtra("extra_movie", dataMovie);
+        intent.putExtra(EXTRA_MOVIE, dataMovie);
         startActivity(intent);
     }
 
@@ -105,24 +96,5 @@ public class MoviesFragment extends Fragment {
         } else {
             progressBar.setVisibility(GONE);
         }
-    }
-
-    public void bindFragmentMovieByQuery(String query) {
-        moviesViewModel= new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MovieViewModel.class);
-        moviesViewModel.searchMovie(query);
-        moviesViewModel.getMovies().observe(getViewLifecycleOwner(), new Observer<ArrayList<Movie>>() {
-            @Override
-            public void onChanged(ArrayList<Movie> movies) {
-                if(movies != null){
-                    listMovieAdapter.setData(movies);
-                    moviesViewModel.clear();
-                    showLoading(false);
-                }
-            }
-        });
-    }
-
-    public void clearList() {
-        listMovieAdapter.clearData(list);
     }
 }

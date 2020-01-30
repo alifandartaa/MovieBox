@@ -1,8 +1,7 @@
-package com.example.secondappcataloguemovie.api;
+package com.example.secondappcataloguemovie.viewmodel;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -20,7 +19,7 @@ public class FavoriteViewModel extends ViewModel {
     public FavoriteViewModel() {
     }
 
-    public void setFavorites(Context context){
+    public void setFavorites(Context context) {
         listFavorites = new MutableLiveData<>();
         ArrayList<Favorite> listItems = new ArrayList<>();
         FavoriteHelper favoriteHelper = FavoriteHelper.getInstance(context);
@@ -37,8 +36,6 @@ public class FavoriteViewModel extends ViewModel {
                     cursor.getString(cursor.getColumnIndex(DatabaseContract.FavoriteColumns.DESC)),
                     cursor.getString(cursor.getColumnIndex(DatabaseContract.FavoriteColumns.POSTER))
             );
-
-            Log.d("tag22", "setFavorites: " + favorite.getId() + " " + favorite.getTitle() + " " + favorite.getType());
 
             listItems.add(favorite);
             cursor.moveToNext();

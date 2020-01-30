@@ -6,7 +6,11 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
 
+import androidx.annotation.NonNull;
+
 import com.example.secondappcataloguemovie.db.FavoriteHelper;
+
+import java.util.Objects;
 
 import static com.example.secondappcataloguemovie.db.DatabaseContract.AUTHORITY;
 import static com.example.secondappcataloguemovie.db.DatabaseContract.FavoriteColumns.CONTENT_URI;
@@ -19,28 +23,24 @@ public class MovieProvider extends ContentProvider {
 
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
     static {
-        // content://com.dicoding.picodiploma.mynotesapp/note
         sUriMatcher.addURI(AUTHORITY, TABLE_NAME, MOVIE);
-        // content://com.dicoding.picodiploma.mynotesapp/note/id
         sUriMatcher.addURI(AUTHORITY,
                 TABLE_NAME + "/#",
                 MOVIE_ID);
     }
 
-    public MovieProvider() {
-    }
-
     @Override
     public boolean onCreate() {
-        // TODO: Implement this to initialize your content provider on startup.
         favoriteHelper = FavoriteHelper.getInstance(getContext());
         favoriteHelper.open();
         return true;
     }
 
     @Override
-    public Cursor query(Uri uri, String[] projection, String selection,
+    public Cursor query(@NonNull Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
+        favoriteHelper = FavoriteHelper.getInstance(getContext());
+        favoriteHelper.open();
         Cursor cursor;
         switch (sUriMatcher.match(uri)) {
             case MOVIE:
@@ -58,55 +58,44 @@ public class MovieProvider extends ContentProvider {
     }
 
     @Override
-    public String getType(Uri uri) {
-        // TODO: Implement this to handle requests for the MIME type of the data
-        // at the given URI.
-        throw new UnsupportedOperationException("Not yet implemented");
+    public String getType(@NonNull Uri uri) {
+        return null;
     }
 
     @Override
-    public Uri insert(Uri uri, ContentValues values) {
+    public Uri insert(@NonNull Uri uri, ContentValues values) {
         long added;
-        switch (sUriMatcher.match(uri)) {
-            case MOVIE:
-                added = favoriteHelper.insert(values);
-                break;
-            default:
-                added = 0;
-                break;
+        if (sUriMatcher.match(uri) == MOVIE) {
+            added = favoriteHelper.insert(values);
+        } else {
+            added = 0;
         }
-        getContext().getContentResolver().notifyChange(CONTENT_URI, null);
+        Objects.requireNonNull(getContext()).getContentResolver().notifyChange(CONTENT_URI, null);
         return Uri.parse(CONTENT_URI + "/" + added);
     }
 
     @Override
-    public int update(Uri uri, ContentValues values, String selection,
+    public int update(@NonNull Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
         int updated;
-        switch (sUriMatcher.match(uri)) {
-            case MOVIE_ID:
-                updated = favoriteHelper.update(uri.getLastPathSegment(), values);
-                break;
-            default:
-                updated = 0;
-                break;
+        if (sUriMatcher.match(uri) == MOVIE_ID) {
+            updated = favoriteHelper.update(uri.getLastPathSegment(), values);
+        } else {
+            updated = 0;
         }
-        getContext().getContentResolver().notifyChange(CONTENT_URI, null);
+        Objects.requireNonNull(getContext()).getContentResolver().notifyChange(CONTENT_URI, null);
         return updated;
     }
 
     @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
+    public int delete(@NonNull Uri uri, String selection, String[] selectionArgs) {
         int deleted;
-        switch (sUriMatcher.match(uri)) {
-            case MOVIE_ID:
-                deleted = favoriteHelper.deleteById(uri.getLastPathSegment());
-                break;
-            default:
-                deleted = 0;
-                break;
+        if (sUriMatcher.match(uri) == MOVIE_ID) {
+            deleted = favoriteHelper.deleteById(uri.getLastPathSegment());
+        } else {
+            deleted = 0;
         }
-        getContext().getContentResolver().notifyChange(CONTENT_URI, null);
+        Objects.requireNonNull(getContext()).getContentResolver().notifyChange(CONTENT_URI, null);
         return deleted;
     }
 

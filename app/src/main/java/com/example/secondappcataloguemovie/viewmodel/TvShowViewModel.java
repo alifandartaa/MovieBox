@@ -1,4 +1,4 @@
-package com.example.secondappcataloguemovie.api;
+package com.example.secondappcataloguemovie.viewmodel;
 
 import android.util.Log;
 
@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.secondappcataloguemovie.BuildConfig;
 import com.example.secondappcataloguemovie.model.TvShow;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -14,11 +15,12 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import cz.msebera.android.httpclient.Header;
 
 public class TvShowViewModel extends ViewModel {
-    private static final String API_KEY = "3148d91de7ab9fa0e608d7be83b7d967";
+    private static final String API_KEY = BuildConfig.API_KEY;
     private MutableLiveData<ArrayList<TvShow>> listTvShow = new MutableLiveData<>();
 
 
@@ -43,13 +45,13 @@ public class TvShowViewModel extends ViewModel {
                     }
                     listTvShow.postValue(listItems);
                 }catch (Exception e){
-                    Log.d("Exception", e.getMessage());
+                    Log.d("Exception", Objects.requireNonNull(e.getMessage()));
                 }
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Log.d("onFailure", error.getMessage());
+                Log.d("onFailure", Objects.requireNonNull(error.getMessage()));
             }
         });
 }
@@ -75,13 +77,13 @@ public class TvShowViewModel extends ViewModel {
                     }
                     listTvShow.postValue(listItems);
                 }catch (Exception e){
-                    Log.d("Exception", e.getMessage());
+                    Log.d("Exception", Objects.requireNonNull(e.getMessage()));
                 }
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Log.d("onFailure", error.getMessage());
+                Log.d("onFailure", Objects.requireNonNull(error.getMessage()));
             }
         });
     }

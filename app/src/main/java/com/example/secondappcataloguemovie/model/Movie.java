@@ -13,13 +13,13 @@ public class Movie implements Parcelable {
     private String posterUrl = "https://image.tmdb.org/t/p/w154";
 
     public Movie(JSONObject object) {
-        try{
+        try {
             this.id = object.getInt("id");
             this.title = object.getString("title");
             this.overview = object.getString("overview");
             String poster = object.getString("poster_path");
             this.posterPath = posterUrl + poster;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -72,7 +72,6 @@ public class Movie implements Parcelable {
         dest.writeString(this.overview);
         dest.writeString(this.posterPath);
     }
-
 
 
     protected Movie(Parcel in) {

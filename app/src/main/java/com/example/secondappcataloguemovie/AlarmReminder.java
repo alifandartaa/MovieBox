@@ -16,7 +16,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.secondappcataloguemovie.activities.MainActivity;
-import com.example.secondappcataloguemovie.api.MovieViewModel;
+import com.example.secondappcataloguemovie.viewmodel.MovieViewModel;
 import com.example.secondappcataloguemovie.model.Movie;
 
 import java.util.ArrayList;
@@ -78,13 +78,11 @@ public class AlarmReminder extends BroadcastReceiver {
         String CHANNEL_NAME = "AlarmManager channel";
 
         NotificationManager notificationManagerCompat = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
-//        Uri alarmSound = RingtoneManager.getDefaultUri(TYPE_NOTIFICATION);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_NAME)
                 .setSmallIcon(R.drawable.ic_access_alarm_black)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setColor(ContextCompat.getColor(context, android.R.color.transparent));
-//                .setSound(alarmSound);
 
         Intent notificationIntent = new Intent(context, MainActivity.class);
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -110,13 +108,11 @@ public class AlarmReminder extends BroadcastReceiver {
         }
     }
 
-
     public void setDailyReminder(Context context, String type, boolean isReminderOn) {
         if (!isReminderOn) {
             cancelAlarm(context, type);
             return;
         }
-
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
         Intent intent = new Intent(context, AlarmReminder.class);
         intent.putExtra(EXTRA_MESSAGE, context.getResources().getString(R.string.content_text));

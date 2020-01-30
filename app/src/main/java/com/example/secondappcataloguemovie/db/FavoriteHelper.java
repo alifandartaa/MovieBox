@@ -21,7 +21,6 @@ public class FavoriteHelper {
         dataBaseHelper = new DatabaseHelper(context);
     }
 
-    //Inisiasi Database
     public static FavoriteHelper getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (SQLiteOpenHelper.class) {
@@ -33,12 +32,10 @@ public class FavoriteHelper {
         return INSTANCE;
     }
 
-    //Membuka koneksi Db
     public void open() throws SQLException {
         database = dataBaseHelper.getWritableDatabase();
     }
 
-    //Menutup koneksi Db
     public void close() {
         dataBaseHelper.close();
         if (database.isOpen())

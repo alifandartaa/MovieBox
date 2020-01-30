@@ -21,7 +21,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/tv_value_release"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tv_title"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:contentDescription="@string/image_detail_tv_show" />
 
         <TextView
             style="@style/TextContent.Black"

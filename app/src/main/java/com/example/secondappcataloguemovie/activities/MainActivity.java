@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -33,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_movie, R.id.navigation_tv_show, R.id.navigation_favorite)
                 .build();
@@ -61,21 +58,21 @@ public class MainActivity extends AppCompatActivity {
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
-                      int bottomNavigationPosition = navView.getSelectedItemId();
-                      if(bottomNavigationPosition == R.id.navigation_movie){
-                          Toast.makeText(MainActivity.this, "movie", Toast.LENGTH_SHORT).show();
-                          Intent intent1 = new Intent(MainActivity.this, SearchMovieActivity.class);
-                          intent1.putExtra(EXTRA_SEARCH_MOVIE, query);
-                          startActivity(intent1);
-                      }else if(bottomNavigationPosition == R.id.navigation_tv_show){
-                          Toast.makeText(MainActivity.this, "tvshow", Toast.LENGTH_SHORT).show();
-                          Intent intent2 = new Intent(MainActivity.this, SearchTvShowActivity.class);
-                          intent2.putExtra(EXTRA_SEARCH_TV_SHOW, query);
-                          startActivity(intent2);
-                          Log.d("tag", "sukses");
-                      }
+                    int bottomNavigationPosition = navView.getSelectedItemId();
+                    if (bottomNavigationPosition == R.id.navigation_movie) {
+                        Toast.makeText(MainActivity.this, R.string.movie, Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(MainActivity.this, SearchMovieActivity.class);
+                        intent1.putExtra(EXTRA_SEARCH_MOVIE, query);
+                        startActivity(intent1);
+                    } else if (bottomNavigationPosition == R.id.navigation_tv_show) {
+                        Toast.makeText(MainActivity.this, R.string.tv_show, Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(MainActivity.this, SearchTvShowActivity.class);
+                        intent2.putExtra(EXTRA_SEARCH_TV_SHOW, query);
+                        startActivity(intent2);
+                    }
                     return true;
                 }
+
                 @Override
                 public boolean onQueryTextChange(String newText) {
                     return false;
@@ -89,12 +86,10 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.action_change_settings) {
             Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
             startActivity(mIntent);
-        }else if(item.getItemId() == R.id.reminder_setting){
+        } else if (item.getItemId() == R.id.reminder_setting) {
             Intent intent = new Intent(this, SettingActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }

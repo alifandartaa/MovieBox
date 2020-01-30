@@ -18,7 +18,6 @@ import java.util.ArrayList;
 
 public class SearchMovieAdapter extends RecyclerView.Adapter<SearchMovieAdapter.CardViewViewHolder> {
     private ArrayList<Movie> listMovie = new ArrayList<>();
-//    private OnItemClickCallback onItemClickCallback;
 
     public SearchMovieAdapter(){
     }

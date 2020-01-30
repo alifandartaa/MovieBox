@@ -11,18 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.secondappcataloguemovie.R;
 import com.example.secondappcataloguemovie.adapter.SearchTvShowAdapter;
-import com.example.secondappcataloguemovie.api.TvShowViewModel;
+import com.example.secondappcataloguemovie.viewmodel.TvShowViewModel;
 import com.example.secondappcataloguemovie.model.TvShow;
 
 import java.util.ArrayList;
 
 public class SearchTvShowActivity extends AppCompatActivity {
 
-    private RecyclerView rvSearch;
     public static final String EXTRA_SEARCH_TV_SHOW = "extras_tv_show";
     private TvShowViewModel tvShowViewModel;
-    String mQuery;
-    private Intent intent;
     private final SearchTvShowAdapter listSearchTvShowAdapter = new SearchTvShowAdapter();
 
 
@@ -31,14 +28,14 @@ public class SearchTvShowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_tv_show);
 
-        rvSearch = findViewById(R.id.rv_search_tv_show);
+        RecyclerView rvSearch = findViewById(R.id.rv_search_tv_show);
         rvSearch.setHasFixedSize(true);
 
         rvSearch.setLayoutManager(new LinearLayoutManager(getBaseContext()));
         listSearchTvShowAdapter.notifyDataSetChanged();
         rvSearch.setAdapter(listSearchTvShowAdapter);
-        intent = getIntent();
-        mQuery = intent.getStringExtra(EXTRA_SEARCH_TV_SHOW);
+        Intent intent = getIntent();
+        String mQuery = intent.getStringExtra(EXTRA_SEARCH_TV_SHOW);
         bindTvShowByQuery(mQuery);
     }
 
@@ -48,8 +45,8 @@ public class SearchTvShowActivity extends AppCompatActivity {
         tvShowViewModel.getTvShows().observe(this, new Observer<ArrayList<TvShow>>() {
             @Override
             public void onChanged(ArrayList<TvShow> tvShows) {
-                if(tvShows != null){
-                   listSearchTvShowAdapter.setData(tvShows);
+                if (tvShows != null) {
+                    listSearchTvShowAdapter.setData(tvShows);
                     tvShowViewModel.clear();
                 }
             }

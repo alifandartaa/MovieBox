@@ -71,7 +71,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
             tvType = itemView.findViewById(R.id.tv_fav_type);
         }
 
-        void bind(Favorite favorite){
+        void bind(Favorite favorite) {
             tvTitle.setText(favorite.getTitle());
             tvType.setText(favorite.getType());
             tvDescription.setText(favorite.getDesc());

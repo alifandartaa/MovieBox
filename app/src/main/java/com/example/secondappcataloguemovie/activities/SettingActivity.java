@@ -1,19 +1,17 @@
 package com.example.secondappcataloguemovie.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Switch;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.secondappcataloguemovie.AlarmReminder;
 import com.example.secondappcataloguemovie.R;
 
-public class SettingActivity extends AppCompatActivity implements View.OnClickListener{
+public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
 
     final boolean DEFAULT_DAILY = false;
     final boolean DEFAULT_RELEASE = false;
@@ -29,17 +27,13 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-
         alarmReminder = new AlarmReminder();
         dailySwitch = findViewById(R.id.sw_daily);
         releaseSwitch = findViewById(R.id.sw_release);
 
-
         SharedPreferences mPreferences = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
-
         boolean isDailyReminderOn = mPreferences.getBoolean(KEY_DAILY, DEFAULT_DAILY);
         boolean isReleaseReminderOn = mPreferences.getBoolean(KEY_RELEASE, DEFAULT_RELEASE);
-        Log.d("Setting", "Preference: " + isReleaseReminderOn + " " + isDailyReminderOn);
 
         dailySwitch.setChecked(isDailyReminderOn);
         releaseSwitch.setChecked(isReleaseReminderOn);
@@ -74,6 +68,4 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
-
-
 }

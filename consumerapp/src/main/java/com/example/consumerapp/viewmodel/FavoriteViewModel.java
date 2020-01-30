@@ -1,4 +1,4 @@
-package com.example.consumerapp.api;
+package com.example.consumerapp.viewmodel;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -26,6 +26,7 @@ public class FavoriteViewModel extends ViewModel {
         ArrayList<Favorite> listItems = new ArrayList<>();
 
         Cursor cursor = context.getContentResolver().query(CONTENT_URI, null, null, null, null);
+        assert cursor != null;
         cursor.moveToFirst();
 
         while (!cursor.isAfterLast()) {

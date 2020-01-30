@@ -13,19 +13,18 @@ public class TvShow implements Parcelable {
     private String posterUrl = "https://image.tmdb.org/t/p/w154";
 
     public TvShow(JSONObject object) {
-        try{
+        try {
             this.id = object.getInt("id");
             this.title = object.getString("name");
             this.overview = object.getString("overview");
             String poster = object.getString("poster_path");
             this.posterPath = posterUrl + poster;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public TvShow(){
-
+    public TvShow() {
     }
 
     protected TvShow(Parcel in) {
