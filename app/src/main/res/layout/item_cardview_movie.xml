@@ -23,7 +23,8 @@
             android:layout_height="200dp"
             android:layout_marginBottom="4dp"
             android:scaleType="centerCrop"
-            tools:src="@color/colorAccent" />
+            tools:src="@color/colorAccent"
+            android:contentDescription="@string/image_movie" />
         <TextView
             android:id="@+id/tv_item_title"
             android:layout_width="match_parent"
@@ -33,7 +34,6 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="8dp"
             android:layout_toEndOf="@id/img_item_photo"
-            android:layout_toRightOf="@id/img_item_photo"
             android:textSize="16sp"
             android:textStyle="bold"
             tools:text="@string/movie_name" />
@@ -46,7 +46,6 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_toEndOf="@id/img_item_photo"
-            android:layout_toRightOf="@id/img_item_photo"
             android:ellipsize="end"
             android:maxLines="5"
             tools:text="@string/overview" />
@@ -56,26 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_toEndOf="@id/img_item_photo"
-            android:layout_toRightOf="@id/img_item_photo"
             android:orientation="horizontal">
-<!--            <Button-->
-<!--                android:id="@+id/btn_set_favorite"-->
-<!--                style="@style/Widget.AppCompat.Button.Colored"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:text="@string/favorite"-->
-<!--                android:textSize="12sp" />-->
-<!--            <Button-->
-<!--                android:id="@+id/btn_set_share"-->
-<!--                style="@style/Widget.AppCompat.Button.Colored"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:text="@string/share"-->
-<!--                android:textSize="12sp" />-->
         </LinearLayout>
     </RelativeLayout>
 

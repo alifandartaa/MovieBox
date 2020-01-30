@@ -10,7 +10,8 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        tools:srcCompat="@drawable/poster_riverdale" />
+        tools:srcCompat="@drawable/poster_riverdale"
+        android:contentDescription="@string/image_widget" />
 
     <TextView
         android:id="@+id/tv_titlewidget"

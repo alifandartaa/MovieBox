@@ -40,4 +40,11 @@
     <string name="alert_confirm_negative" translatable="false">Tidak</string>
     <string name="alert_confirm_positive" translatable="false">Ya</string>
     <string name="image_detail_tv_show" translatable="false">Image Detail Tv Show</string>
+    <string name="sw_error">Switch error</string>
+    <string name="image_favorite">Image Favorite</string>
+    <string name="image_movie">Image Movie</string>
+    <string name="image_tv_show">Image Tv Show</string>
+    <string name="image_movie_search">Image Movie Search</string>
+    <string name="image_tv_show_search">Image Tv Show Search</string>
+    <string name="image_widget">Image Widget</string>
 </resources>
