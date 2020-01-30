@@ -79,14 +79,8 @@ public class MoviesFragment extends Fragment {
     }
 
     private void showSelectedMovie(Movie movie) {
-        Movie dataMovie = new Movie();
-        dataMovie.setId(movie.getId());
-        dataMovie.setTitle(movie.getTitle());
-        dataMovie.setOverview(movie.getOverview());
-        dataMovie.setPosterPath(movie.getPosterPath());
-
         Intent intent = new Intent(getActivity(), DetailMovieActivity.class);
-        intent.putExtra(EXTRA_MOVIE, dataMovie);
+        intent.putExtra(EXTRA_MOVIE, movie);
         startActivity(intent);
     }
 
