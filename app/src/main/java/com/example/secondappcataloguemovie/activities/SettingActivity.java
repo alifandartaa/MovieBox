@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -58,6 +59,8 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 releaseSwitch.setChecked(releaseSwitch.isChecked());
                 alarmReminder.setReleaseReminder(getApplicationContext(), AlarmReminder.TYPE_RELEASE, releaseSwitch.isChecked());
                 break;
+                default:
+                    Toast.makeText(this, getString(R.string.sw_error), Toast.LENGTH_SHORT).show();
         }
     }
 
